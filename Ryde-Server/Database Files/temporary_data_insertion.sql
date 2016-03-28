@@ -13,26 +13,26 @@ INSERT INTO User (first_name, last_name, fb_tok, phone_number, driver_status, ca
 ('Jake', 'Jundson', 'JakeFBTok', 'JakePhone', '1', 'honda', 'civic', 'black'),
 ('James', 'Jordan', 'JamesFBTok', 'JamesPhone', '0', 'honda', 'civic', 'blue');
 
-INSERT INTO GroupTable (GroupName, Description) VALUES 
+INSERT INTO Groups (name, description) VALUES 
 ('Cool', 'Coolest kids'),
 ('Not Cool', 'Lame kids');
 
-INSERT INTO Timeslot (Passcode, StartTime, EndTime) VALUES 
+INSERT INTO Timeslot (passcode, start_time, end_time) VALUES 
 ('123', '2016-03-15 15:00:00', '2016-03-15 17:00:00'),
 ('456', CAST(N'2016-03-15 13:00:00' AS DATETIME), CAST(N'2016-03-15 19:00:00' AS DATETIME));
 
-INSERT INTO GroupTimeslot (GID, TID) VALUES 
+INSERT INTO GroupUser (user_id, group_id) VALUES 
 ('1', '1'),
 ('2', '2');
 
-INSERT INTO UserTimeslot (UID, TID, Driver) VALUES 
+INSERT INTO TimeslotUser (user_id, ts_id, driver) VALUES 
 ('1', '1', '1'),
 ('4', '1', '0'),
 ('2', '2', '1'),
 ('3', '2', '1'),
 ('4', '2', '0');
 
-INSERT INTO UserGroup (UID, GID, AdminF) VALUES 
+INSERT INTO GroupUser (user_id, group_id, admin) VALUES 
 ('1', '1', '0'),
 ('4', '1', '1'),
 ('2', '2', '1'),
