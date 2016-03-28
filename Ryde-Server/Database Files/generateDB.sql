@@ -38,29 +38,32 @@ CREATE TABLE Timeslot_Table
 
 CREATE TABLE GroupUser 
 (
+    id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
     user_id INT NOT NULL,
     group_id INT NOT NULL,
     admin boolean,
-    PRIMARY KEY (user_id, group_id),
     FOREIGN KEY (user_id) REFERENCES User_Table(id) ON DELETE CASCADE,
     FOREIGN KEY (group_id) REFERENCES Group_Table(id) ON DELETE CASCADE
 );
 
 CREATE TABLE TimeslotUser
 (
+    id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
     user_id INT NOT NULL,
     ts_id INT NOT NULL,
     driver boolean,
-    PRIMARY KEY (user_id, ts_id),
     FOREIGN KEY (user_id) REFERENCES User_Table(id) ON DELETE CASCADE,
     FOREIGN KEY (ts_id) REFERENCES Timeslot_Table(id) ON DELETE CASCADE
 );
 
 CREATE TABLE GroupTimeslot
 (
+    id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
     group_id INT NOT NULL,
     ts_id INT NOT NULL,
-    PRIMARY KEY (group_id, ts_id),
     FOREIGN KEY (group_id) REFERENCES Group_Table(id) ON DELETE CASCADE,
     FOREIGN KEY (ts_id) REFERENCES Timeslot_Table(id) ON DELETE CASCADE
 );

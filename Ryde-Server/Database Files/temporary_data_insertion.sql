@@ -7,17 +7,17 @@
  * Created: Mar 28, 2016
  */
 
-INSERT INTO User (first_name, last_name, fb_tok, phone_number, driver_status, car_make, car_model, car_color) VALUES 
+INSERT INTO User_Table (first_name, last_name, fb_tok, phone_number, driver_status, car_make, car_model, car_color) VALUES 
 ('John', 'Johnson', 'JohnFBTok', 'JohnPhone', '0', 'mazda', '3', 'blue'),
 ('Jim', 'Jackson', 'JimFBTok', 'JimPhone', '0', 'nissan', 'ultima', 'black'),
 ('Jake', 'Jundson', 'JakeFBTok', 'JakePhone', '1', 'honda', 'civic', 'black'),
 ('James', 'Jordan', 'JamesFBTok', 'JamesPhone', '0', 'honda', 'civic', 'blue');
 
-INSERT INTO Groups (name, description) VALUES 
+INSERT INTO Group_Table (title, description) VALUES 
 ('Cool', 'Coolest kids'),
 ('Not Cool', 'Lame kids');
 
-INSERT INTO Timeslot (passcode, start_time, end_time) VALUES 
+INSERT INTO Timeslot_Table (passcode, start_time, end_time) VALUES 
 ('123', '2016-03-15 15:00:00', '2016-03-15 17:00:00'),
 ('456', CAST(N'2016-03-15 13:00:00' AS DATETIME), CAST(N'2016-03-15 19:00:00' AS DATETIME));
 
