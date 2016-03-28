@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="GroupTimeslotEditDlg" widgetVar="GroupTimeslotEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditGroupTimeslotTitle}">
+            <h:form id="GroupTimeslotEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{groupTimeslotController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditGroupTimeslotLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{groupTimeslotController.selected.id}" title="#{bundle.EditGroupTimeslotTitle_id}" required="true" requiredMessage="#{bundle.EditGroupTimeslotRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditGroupTimeslotLabel_groupId}" for="groupId" />
+                        <p:selectOneMenu id="groupId" value="#{groupTimeslotController.selected.groupId}" required="true" requiredMessage="#{bundle.EditGroupTimeslotRequiredMessage_groupId}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{groupTableController.itemsAvailableSelectOne}"
+                                           var="groupIdItem"
+                                           itemValue="#{groupIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditGroupTimeslotLabel_tsId}" for="tsId" />
+                        <p:selectOneMenu id="tsId" value="#{groupTimeslotController.selected.tsId}" required="true" requiredMessage="#{bundle.EditGroupTimeslotRequiredMessage_tsId}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{timeslotTableController.itemsAvailableSelectOne}"
+                                           var="tsIdItem"
+                                           itemValue="#{tsIdItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{groupTimeslotController.update}" value="#{bundle.Save}" update="display,:GroupTimeslotListForm:datalist,:growl" oncomplete="handleSubmit(args, 'GroupTimeslotEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="GroupTimeslotEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

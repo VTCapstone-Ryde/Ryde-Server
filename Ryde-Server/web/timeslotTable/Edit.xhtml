@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TimeslotTableEditDlg" widgetVar="TimeslotTableEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditTimeslotTableTitle}">
+            <h:form id="TimeslotTableEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{timeslotTableController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditTimeslotTableLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{timeslotTableController.selected.id}" title="#{bundle.EditTimeslotTableTitle_id}" required="true" requiredMessage="#{bundle.EditTimeslotTableRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditTimeslotTableLabel_passcode}" for="passcode" />
+                        <p:inputText id="passcode" value="#{timeslotTableController.selected.passcode}" title="#{bundle.EditTimeslotTableTitle_passcode}" />
+                        <p:outputLabel value="#{bundle.EditTimeslotTableLabel_startTime}" for="startTime" />
+                        <p:calendar id="startTime" pattern="MM/dd/yyyy HH:mm:ss" value="#{timeslotTableController.selected.startTime}" title="#{bundle.EditTimeslotTableTitle_startTime}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditTimeslotTableLabel_endTime}" for="endTime" />
+                        <p:calendar id="endTime" pattern="MM/dd/yyyy HH:mm:ss" value="#{timeslotTableController.selected.endTime}" title="#{bundle.EditTimeslotTableTitle_endTime}"  showOn="button"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{timeslotTableController.update}" value="#{bundle.Save}" update="display,:TimeslotTableListForm:datalist,:growl" oncomplete="handleSubmit(args, 'TimeslotTableEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TimeslotTableEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

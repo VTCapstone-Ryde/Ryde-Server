@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UserTableCreateDlg" widgetVar="UserTableCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateUserTableTitle}">
+            <h:form id="UserTableCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{userTableController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateUserTableLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{userTableController.selected.id}" title="#{bundle.CreateUserTableTitle_id}" required="true" requiredMessage="#{bundle.CreateUserTableRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.CreateUserTableLabel_driverStatus}" for="driverStatus" />
+                        <p:selectBooleanCheckbox id="driverStatus" value="#{userTableController.selected.driverStatus}" />
+                        <p:outputLabel value="#{bundle.CreateUserTableLabel_lastName}" for="lastName" />
+                        <p:inputText id="lastName" value="#{userTableController.selected.lastName}" title="#{bundle.CreateUserTableTitle_lastName}" />
+                        <p:outputLabel value="#{bundle.CreateUserTableLabel_firstName}" for="firstName" />
+                        <p:inputText id="firstName" value="#{userTableController.selected.firstName}" title="#{bundle.CreateUserTableTitle_firstName}" />
+                        <p:outputLabel value="#{bundle.CreateUserTableLabel_fbTok}" for="fbTok" />
+                        <p:inputText id="fbTok" value="#{userTableController.selected.fbTok}" title="#{bundle.CreateUserTableTitle_fbTok}" />
+                        <p:outputLabel value="#{bundle.CreateUserTableLabel_phoneNumber}" for="phoneNumber" />
+                        <p:inputText id="phoneNumber" value="#{userTableController.selected.phoneNumber}" title="#{bundle.CreateUserTableTitle_phoneNumber}" />
+                        <p:outputLabel value="#{bundle.CreateUserTableLabel_carMake}" for="carMake" />
+                        <p:inputText id="carMake" value="#{userTableController.selected.carMake}" title="#{bundle.CreateUserTableTitle_carMake}" />
+                        <p:outputLabel value="#{bundle.CreateUserTableLabel_carModel}" for="carModel" />
+                        <p:inputText id="carModel" value="#{userTableController.selected.carModel}" title="#{bundle.CreateUserTableTitle_carModel}" />
+                        <p:outputLabel value="#{bundle.CreateUserTableLabel_carColor}" for="carColor" />
+                        <p:inputText id="carColor" value="#{userTableController.selected.carColor}" title="#{bundle.CreateUserTableTitle_carColor}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{userTableController.create}" value="#{bundle.Save}" update="display,:UserTableListForm:datalist,:growl" oncomplete="handleSubmit(args,'UserTableCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="UserTableCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
