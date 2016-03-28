@@ -43,7 +43,7 @@ CREATE TABLE GroupUser
     admin boolean,
     PRIMARY KEY (user_id, group_id),
     FOREIGN KEY (user_id) REFERENCES User(id) ON DELETE CASCADE,
-    FOREIGN KEY (group_id) REFERENCES Groups(id) ON DELETE CASCADE
+    FOREIGN KEY (group_id) REFERENCES Group(id) ON DELETE CASCADE
 );
 
 CREATE TABLE TimeslotUser
