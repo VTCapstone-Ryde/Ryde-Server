@@ -9,7 +9,8 @@ CREATE TABLE User
 (
     id INT NOT NULL AUTO_INCREMENT,
     driver_status boolean,
-    name VARCHAR (64),
+    last_name VARCHAR (64),
+    first_name VARCHAR (64),
     fb_tok VARCHAR(256),
     phone_number VARCHAR (15),
     car_make VARCHAR (32),
