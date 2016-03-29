@@ -28,4 +28,11 @@ public class TimeslotTableFacade extends AbstractFacade<TimeslotTable> {
         super(TimeslotTable.class);
     }
     
+    public TimeslotTable findTimeslotById(int id) {return null;}
+    public String generatePasscode() {return null;}
+    public void deleteTimeslot(int id) {}
+    public TimeslotTable createTimeslot() {return null;}
+    public TimeslotTable updateTimeslot(TimeslotTable ts) {return null;}
+
+    
 }

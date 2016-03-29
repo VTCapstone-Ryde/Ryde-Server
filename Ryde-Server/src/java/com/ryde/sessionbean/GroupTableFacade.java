@@ -5,6 +5,7 @@
 package com.ryde.sessionbean;
 
 import com.ryde.entity.GroupTable;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,5 +28,8 @@ public class GroupTableFacade extends AbstractFacade<GroupTable> {
     public GroupTableFacade() {
         super(GroupTable.class);
     }
-    
+    public GroupTable findGroupById(int id) {return null;}
+    public List<GroupTable> findGroupsByName(String name) {return null;}
+    public GroupTable findGroupByName(String name) {return null;}
+
 }

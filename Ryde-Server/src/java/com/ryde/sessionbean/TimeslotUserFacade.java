@@ -4,7 +4,10 @@
  */
 package com.ryde.sessionbean;
 
+import com.ryde.entity.TimeslotTable;
 import com.ryde.entity.TimeslotUser;
+import com.ryde.entity.UserTable;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,5 +30,8 @@ public class TimeslotUserFacade extends AbstractFacade<TimeslotUser> {
     public TimeslotUserFacade() {
         super(TimeslotUser.class);
     }
-    
+    public List<TimeslotTable> findUserTimeslots(int userID) {return null;}
+    public List<UserTable> findUsersInTimeslot(int timeslotID) {return null;}
+    public List<UserTable> findDriversInTimeslot(int driver) {return null;}
+
 }

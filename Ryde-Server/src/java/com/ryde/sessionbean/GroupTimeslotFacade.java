@@ -5,6 +5,8 @@
 package com.ryde.sessionbean;
 
 import com.ryde.entity.GroupTimeslot;
+import com.ryde.entity.TimeslotTable;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,5 +29,7 @@ public class GroupTimeslotFacade extends AbstractFacade<GroupTimeslot> {
     public GroupTimeslotFacade() {
         super(GroupTimeslot.class);
     }
+    
+    public List<TimeslotTable> findTimeslotsInGroup(int groupID) {return null;}
     
 }
