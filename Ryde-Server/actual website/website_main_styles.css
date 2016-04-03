@@ -36,12 +36,17 @@ div#copyright {
     text-align: center;
     width: 60%;
     display: inline;
+    padding-top: 15px;
 }
 div#about{
     float: left;
     width: 10%;
     padding-left: 11%;
     display: inline;
+}
+div#content {
+    clear: both;
+    position: relative;
 }
 div#footer {
     clear: both;
