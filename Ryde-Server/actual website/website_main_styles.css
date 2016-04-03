@@ -12,14 +12,13 @@ li {
 }
 div#nav {
     float: left;
-    width: 15%;
+    width: 75%;
     display: inline;
 }
 div#search {
     float: left;
-    width: 75%;
+    width: 15%;
     display: inline;
-    
 }
 div#logout {
     float: left;
@@ -37,12 +36,17 @@ div#copyright {
     text-align: center;
     width: 60%;
     display: inline;
+    padding-top: 15px;
 }
 div#about{
     float: left;
     width: 10%;
-    padding-left: 10%;
+    padding-left: 11%;
     display: inline;
+}
+div#content {
+    clear: both;
+    position: relative;
 }
 div#footer {
     clear: both;
