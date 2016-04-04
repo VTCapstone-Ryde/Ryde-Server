@@ -26,55 +26,66 @@
                         <a class="nav-link" href="#">Timeslots</a>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav pull-xs-right p-l-1">
+                <ul class="nav navbar-nav pull-xs-right p-l-0">
                     <li class="nav-item active">
-                        <button class="btn btn-danger" type="submit">Log Out</button>
+                        <button class="btn btn-primary" type="submit">Log Out</button>
                     </li>
                 </ul>
                 <form class="form-inline pull-xs-right">
                     <input class="form-control" type="text" placeholder="Search Groups">
-                    <button class="btn btn-success" type="submit">Search</button>
+                    <button class="btn btn-primary" type="submit">Search</button>
                 </form>
             </nav>
         </div>
 
         <div id="content">
             <div class="row">
-                <div class="col-sm-4">
-                    <h4>Your Groups:</h4>
-                    <ul id="groups_list">
-                        <li>
-                            <a href="#">Beta Balci Beta</a>
-                        </li>
-                        <li>
-                            <a href="#">Alpha Osman Chi</a>
-                        </li>
-                        <li>
-                            <a href="#">Capstone Sigma</a>
-                        </li>
-                        <li>
-                            <a href="#">Osman Kappa Theta</a>
-                        </li>
-                        <li>
-                            <a href="#">CS 4704</a>
-                        </li>
-                        <li>
-                            <a href="#">Balci Kappa Theta</a>
-                        </li>
-                    </ul>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-4" style="padding-top:2%">
+                    <h4>Your Groups</h4>
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr class="clickable-row">
+                                <td>Beta Balci Beta</td>
+                            </tr>
+                            <tr>
+                                <td>Alpha Osman Chi</td>
+                            </tr>
+                            <tr>
+                                <td>Capstone Sigma</td>
+                            </tr>
+                            <tr>
+                                <td>Osman Kappa Theta</td>
+                            </tr>
+                            <tr>
+                                <td>CS 4704</td>
+                            </tr>
+                            <tr>
+                                <td>Balci Kappa Theta</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-
-                <div class="col-sm-4">
-                    <h4>Active Groups and TADs:</h4>
-                    <ul id="active_groups_list">
-                        <li>
-                            <a href="#">Beta Balci Beta driving until 2am</a>
-                        </li>
-                        <li>
-                            <a href="#">TAD 1 driving until 11pm</a>
-                        </li>
-                    </ul>
-                    <form>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4" style="padding-top:2%">
+                    <h4>Active Groups and TADs</h4>
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr class="clickable-row">
+                                <td>Beta Balci Beta</td>
+                                <td>7PM - 2AM
+                            </tr>
+                            <tr>
+                                <td>CS 4704</td>
+                                <td>5PM - 8PM
+                            </tr>
+                            <tr>
+                                <td>TAD 1</td>
+                                <td>10PM - 4AM
+                            </tr>
+                        </tbody>
+                    </table>
+                    <form style="padding-top:5%">
                         <input type="submit" class="btn btn-primary btn-lg" value="Create Group" />
                     </form>
                 </div>
@@ -82,7 +93,7 @@
         </div>
 
         <div id="footer">
-            <nav class="navbar navbar-light navbar-bottom bg-faded">
+            <nav class="navbar navbar-light navbar-fixed-bottom bg-faded">
                 <ul class="nav navbar-nav pull-xs-left">
                     <li class="nav-item">
                         <a href="https://www.facebook.com/">
