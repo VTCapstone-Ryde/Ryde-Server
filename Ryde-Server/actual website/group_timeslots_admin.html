@@ -7,6 +7,8 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Group Timeslots</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap-table.css">
     </head>
 
     <body>
@@ -39,9 +41,33 @@
         </div>
 
         <div id="content">
-            
+            <div id="toolbar" class="btn-group">
+                <button type="button" class="btn btn-default">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+                <button type="button" class="btn btn-default">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </button>
+            </div>
+            <table id="table"
+                   data-click-to-select="true"
+                   data-search="true"
+                   data-show-refresh="true"
+                   data-show-toggle="true"
+                   data-show-columns="true"
+                   data-toolbar="#toolbar">
+                <thead>
+                    <tr>
+                        <th data-field="state" data-checkbox="true"></th>
+                        <th data-field="Timeslot">Timeslot</th>
+                        <th data-field="Time">Time</th>
+                        <th data-field="Drivers">Drivers</th>
+                        <th data-field="Password">Password</th>
+                    </tr>
+                </thead>
+            </table>
         </div>
-        
+
         <div id="footer">
             <nav class="navbar navbar-light navbar-bottom bg-faded">
                 <ul class="nav navbar-nav pull-xs-left">
@@ -66,9 +92,9 @@
                         </a>
                     </li>
                 </ul>
-                
+
                 <p class="text-xs-center font-italic"> Copyright Ryde 2016</p>
-                
+
                 <ul class="nav navbar-nav pull-xs-right">
                     <li class="nav-item">
                         <a href="#">About</a>
@@ -77,12 +103,14 @@
                         <a href="#">Contact Us</a>
                     </li>
                 </ul>
-                
+
             </nav>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="bootstrap-table.min.js"></script>
+        <script type="text/javascript" src="group_timeslot.js"></script>
     </body>
 
 
